@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tessa Mae | Songwriter Studio</title>
+    <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%23D8A7B1" d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>'>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <script type="importmap">
+      {
+        "imports": {
+          "@google/genai": "https://esm.sh/@google/genai@^0.8.0"
+        }
+      }
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo-link"><div class="logo">Tessa Mae</div></a>
+            <ul class="nav-links">
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#music">Music</a></li>
+                <li><a href="index.html#chat">Chat</a></li>
+                <li><a href="songwriter.html">Songwriter Studio</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="songwriter" class="container">
+            <div class="songwriter-container">
+                <h2>Songwriter Studio</h2>
+                <p>Got an idea for a hit? Let's write a song together! Give me a theme, a story, or just a feeling, and I'll turn it into a country-pop anthem. </p>
+                <form id="song-form">
+                    <label for="song-prompt" class="sr-only">Your song idea or prompt</label>
+                    <textarea id="song-prompt" placeholder="e.g., 'A song about leaving a small town to chase a dream in the big city, but missing home.'" required></textarea>
+                    <button id="generate-song-btn" type="submit">Write My Song</button>
+                </form>
+                <div id="loading-indicator" style="display: none; margin-top: 1rem;">Tessa's writing...</div>
+                
+                <div id="song-output-container" style="display: none;">
+                    <h3>Our New Song!</h3>
+                    <p>Here's what I came up with. Feel free to edit the lyrics right here and make it our own.</p>
+                    <label for="song-lyrics" class="sr-only">Generated song lyrics</label>
+                    <textarea id="song-lyrics" aria-label="Generated song lyrics"></textarea>
+                    <button id="submit-song-btn" disabled>Submit to Label</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://www.instagram.com/tessamaeofficial" target="_blank" aria-label="Tessa Mae on Instagram">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z" /></svg>
+            </a>
+        </div>
+        <p>&copy; 2025 Adamo Group Holdings Limited Company. All Rights Reserved.</p>
+    </footer>
+
+    <script type="module" src="songwriter.js"></script>
+</body>
+</html>
